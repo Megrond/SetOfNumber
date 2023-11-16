@@ -90,9 +90,27 @@ SetOfNumber& SetOfNumber::operator++()
 	return *this;
 }
 
-SetOfNumber& SetOfNumber::operator++(int)
+const SetOfNumber SetOfNumber::operator++(int)
 {
-	return this->operator++();
+	SetOfNumber set{ *this };
+	this->operator++();
+	return set;
+}
+
+SetOfNumber& SetOfNumber::operator--()
+{
+	for (size_t i = 0; i < sszz; i++)
+	{
+		arr[i]--;
+	}
+	return *this;
+}
+
+const SetOfNumber SetOfNumber::operator--(int)
+{
+	SetOfNumber set{ *this };
+	this->operator--();
+	return set;
 }
 
 SetOfNumber& SetOfNumber::operator-=(uint32_t value)

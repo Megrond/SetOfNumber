@@ -38,7 +38,9 @@ public:
 	const SetOfNumber operator+(const SetOfNumber& set) const;
 
 	SetOfNumber& operator++();
-	SetOfNumber& operator++(int);
+	const SetOfNumber operator++(int);
+	SetOfNumber& operator--();
+	const SetOfNumber operator--(int);
 
 	SetOfNumber& operator-=(uint32_t value);
 	const SetOfNumber operator-(uint32_t value) const;
