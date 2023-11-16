@@ -179,3 +179,22 @@ ostream& operator<<(ostream& out, const SetOfNumber& set)
 	out << " }";
 	return out;
 }
+
+istream& operator>>(istream& out, SetOfNumber& set)
+{
+	cout << " Укажите размер множества" << endl;
+
+	out >> set.sszz;
+	out.ignore(1);
+
+	delete[]set.arr;
+	set.arr = new uint32_t[set.sszz];
+	for (size_t i = 0; i < set.sszz; i++)
+	{
+		cout << " Укажите значение индекса " << i << endl;
+		out >> set.sszz;
+		out.ignore(1);
+	}
+	return out;
+
+}

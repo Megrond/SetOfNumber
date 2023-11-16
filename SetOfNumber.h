@@ -52,4 +52,5 @@ public:
 	friend const SetOfNumber operator+(uint32_t value, const SetOfNumber& set);
 
 	friend ostream& operator<< (ostream& out, const SetOfNumber& set);
+	friend istream& operator>> (istream& out, SetOfNumber& set);
 };
