@@ -7,57 +7,50 @@ using namespace std;
 
 int main()
 {
-	SetConsoleOutputCP(1251);
 
-	uint32_t temp[] = { 1,1,1,1,1,1,2,3 };
-	SetOfNumber x{ 8,temp };
+	uint32_t temp[] = { 1, 1, 1, 1, 1, 1, 2, 3 };
+	SetOfNumber x{ 8, temp };
 
 	x.show();
-	cout << endl;
+	std::cout << std::endl;
 
 	x += 10;
-	//cout << "\t|x += 10|" << endl;
-	x.show();
-	cout << endl;
 
+	x.show();
+	std::cout << std::endl;
 
 	SetOfNumber y = x + 12;
 	++y;
-	//cout << "\t|++y|" << endl;
+
 	y.show();
-	cout << endl;
+	std::cout << std::endl;
 
 	y++;
-	//cout << "\t|y++|" << endl;
 	y.show();
-	cout << endl;
+	std::cout << std::endl;
+
 
 	x += y;
-	//cout << "\t|x += y|" << endl;
 	x.show();
-	cout << endl;
+	std::cout << std::endl;
+
 
 	uint32_t temp2[] = { 100,200,400 };
-	SetOfNumber z{ 3,temp2 };
+	SetOfNumber z{ 3, temp2 };
 
 	SetOfNumber zx = z + x;
-	//cout << "\t|zxy|" << endl;
 	zx.show();
-	cout << endl;
+	std::cout << std::endl;
 
 	zx -= 14;
-	//cout << "\t|zx -= 200|" << endl;
 	zx.show();
-	cout << endl;
+	std::cout << std::endl;
 
 	SetOfNumber yz = zx - 200;
-	//cout << "\t|zxy|" << endl;
+	zx.show();
+	std::cout << std::endl;
 	yz.show();
-	cout << endl;
-
-
-
-
+	std::cout << std::endl;
 
 	return 0;
 }
