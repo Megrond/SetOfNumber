@@ -1,5 +1,7 @@
 #include "SetOfNumber.h"
 
+using namespace std;
+
 SetOfNumber::SetOfNumber(unsigned int size, uint32_t* arr) : arr{ new uint32_t[size] }, sszz{ size }
 {
 	int index = 0;
@@ -165,4 +167,15 @@ const SetOfNumber operator+(const SetOfNumber& set, uint32_t value)
 const SetOfNumber operator+(uint32_t value, const SetOfNumber& set)
 {
 	return set + value;
+}
+
+ostream& operator<<(ostream& out, const SetOfNumber& set)
+{
+	out << "{";
+	for (size_t i = 0; i < set.sszz; i++)
+	{
+		out << " " << set.arr[i];
+	}
+	out << " }";
+	return out;
 }

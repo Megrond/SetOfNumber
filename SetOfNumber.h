@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+using namespace std;
+
 class SetOfNumber
 {
 private:
@@ -48,4 +50,6 @@ public:
 	SetOfNumber& operator+=(uint32_t value);
 	friend const SetOfNumber operator+(const SetOfNumber& set, uint32_t value);
 	friend const SetOfNumber operator+(uint32_t value, const SetOfNumber& set);
+
+	friend ostream& operator<< (ostream& out, const SetOfNumber& set);
 };
