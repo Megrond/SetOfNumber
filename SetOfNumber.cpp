@@ -140,7 +140,7 @@ SetOfNumber& SetOfNumber::operator-=(uint32_t value)
 	{
 		return *this;
 	}
-	 
+	 ghj
 	uint32_t* temp = new uint32_t[sszz - 1];
 	for (uint32_t i = 0; i < index; i++)
 	{

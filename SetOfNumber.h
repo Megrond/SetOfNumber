@@ -61,4 +61,5 @@ public:
 	friend istream& operator>> (istream& out, SetOfNumber& set);
 
 	SetOfNumber& operator= (const SetOfNumber& name);
+
 };
