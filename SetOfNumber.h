@@ -8,6 +8,12 @@ class SetOfNumber
 private:
 	uint32_t* arr;
 	uint32_t sszz;
+
+	void clear()
+	{
+		delete[]arr;
+		arr = nullptr;
+	}
 public:
 	SetOfNumber(unsigned int size, uint32_t* arr);
 
@@ -23,7 +29,7 @@ public:
 
 	~SetOfNumber()
 	{
-		delete[] arr;
+		clear();
 	}
 
 	uint32_t has(uint32_t value, uint32_t limit = -1) const;
@@ -53,4 +59,6 @@ public:
 
 	friend ostream& operator<< (ostream& out, const SetOfNumber& set);
 	friend istream& operator>> (istream& out, SetOfNumber& set);
+
+	SetOfNumber& operator= (const SetOfNumber& name);
 };

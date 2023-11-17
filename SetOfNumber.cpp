@@ -1,4 +1,5 @@
 #include "SetOfNumber.h"
+#pragma 
 
 using namespace std;
 
@@ -64,6 +65,23 @@ SetOfNumber& SetOfNumber::operator+=(uint32_t value)
 	return *this;
 }
 
+SetOfNumber& SetOfNumber::operator=(const SetOfNumber& name)
+{
+	if (this == &name)
+	{
+		return *this;
+	}
+	clear();
+
+	arr = new uint32_t[name.sszz];
+	for (uint32_t i = 0; i < name.sszz; i++)
+	{
+		arr[i] = name.arr[i];
+	}
+	sszz = name.sszz;
+	return *this;
+}
+
 SetOfNumber& SetOfNumber::operator+=(const SetOfNumber& set)
 {
 	for (size_t i = 0; i < set.sszz; i++)
@@ -124,13 +142,13 @@ SetOfNumber& SetOfNumber::operator-=(uint32_t value)
 	}
 
 	uint32_t* temp = new uint32_t[sszz - 1];
-	for (size_t i = 0; i < index; i++)
+	for (uint32_t i = 0; i < index; i++)
 	{
 		temp[i] = arr[i];
 	}
 	if (index != sszz - 1)
 	{
-		for (size_t i = index + 1; i < sszz; i++)
+		for (uint32_t i = index + 1; i < sszz; i++)
 		{
 			temp[i - 1] = arr[i];
 		}
@@ -191,7 +209,7 @@ istream& operator>>(istream& out, SetOfNumber& set)
 	set.arr = new uint32_t[set.sszz];
 	for (size_t i = 0; i < set.sszz; i++)
 	{
-		cout << " Укажите значение индекса " << i << endl;
+		cout << " Укажите значение индекса " << i << ": ";
 		out >> set.sszz;
 		out.ignore(1);
 	}

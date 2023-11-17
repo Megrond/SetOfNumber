@@ -35,9 +35,15 @@ int main()
 	zx -= 14;
 	std::cout << zx << std::endl;
 
-	SetOfNumber yz = zx - 200;
+	{
+		SetOfNumber yz = zx - 200;
+		std::cout << zx << std::endl;
+		std::cout << yz << std::endl;
+
+		zx = yz;
+	}
 	std::cout << zx << std::endl;
-	std::cout << yz << std::endl;
+	
 
 	return 0;
 }
